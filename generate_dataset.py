@@ -130,10 +130,10 @@ class DataDownloader:
 
             sleep(1)
 
-            videoname_candinate_list = glob.glob('./*')
-            for videoname_candinate in videoname_candinate_list:
-                if videoname_candinate.split('.')[-2] == '/current_' + mode:
-                    videoname = videoname_candinate
+            videoname_candidate_list = glob.glob('./*')
+            for videoname_candidate in videoname_candidate_list:
+                if f"current_{mode}" in videoname_candidate:
+                    videoname = videoname_candidate
 
             if len(data) == 1:  # len(data) is len(data.list_seqnames)
                 process(data, 0, videoname, self.output_root)
